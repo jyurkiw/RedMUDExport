@@ -2,6 +2,8 @@
  * Export function for node command line execution.
  * Takes a single argument: The filename to write to.
  * Usage: npm start -- <filename>
+ * 
+ * @namespace cli
  */
 function exportAll() {
     var filename = process.argv[2];
