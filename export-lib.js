@@ -2,6 +2,7 @@
  * An export tool for RedMUD.
  * Exports the contents of a RedMUD Redis server.
  * 
+ * @namespace ExportLib
  * @param {any} mudlib A mud-lib object.
  */
 function RedMUDExport(mudlib) {

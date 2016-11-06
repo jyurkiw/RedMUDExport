@@ -56,7 +56,7 @@ describe('Basic area exporting', function() {
     });
 
     after(function(done) {
-        //client.flushall();
+        client.flushall();
         done();
     });
 
