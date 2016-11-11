@@ -1,5 +1,6 @@
 var chai = require('chai');
 var expect = chai.expect;
+var should = chai.should();
 var assert = require('assert');
 
 var redis = require('redis');
@@ -7,7 +8,7 @@ var redis = require('redis');
 
 var client = redis.createClient();
 
-var lib = require('redmudlib')(client);
+var lib = require('redmudlib')();
 var rex = require('../export-lib')(lib);
 
 var koboldValleyArea = {
@@ -42,11 +43,6 @@ var koboldAreaUpdated = {
     size: 0
 };
 
-var objExportTemplate = {
-    areas: {},
-    rooms: {}
-};
-
 //Tests
 describe('Basic area exporting', function() {
     // Setup
@@ -64,7 +60,7 @@ describe('Basic area exporting', function() {
         var areaTestObj = null;
 
         beforeEach(function() {
-            areaTestObj = Object.assign({}, objExportTemplate);
+            areaTestObj = { areas: {}, rooms: {} }
             areaTestObj.areas[koboldValleyArea.areacode.toString()] = Object.assign({}, koboldValleyArea);
 
             return Promise.all([
@@ -85,7 +81,7 @@ describe('Basic area exporting', function() {
         var areaTestObj = null;
 
         beforeEach(function() {
-            areaTestObj = Object.assign({}, objExportTemplate);
+            areaTestObj = { areas: {}, rooms: {} }
             areaTestObj.areas[koboldValleyArea.areacode.toString()] = Object.assign({}, koboldValleyArea);
             areaTestObj.areas[goblinCaveArea.areacode.toString()] = Object.assign({}, goblinCaveArea);
 
