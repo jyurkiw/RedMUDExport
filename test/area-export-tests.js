@@ -60,7 +60,7 @@ describe('Basic area exporting', function() {
         var areaTestObj = null;
 
         beforeEach(function() {
-            areaTestObj = { areas: {}, rooms: {} }
+            areaTestObj = rex.templateUtil.baseOutputTemplate();
             areaTestObj.areas[koboldValleyArea.areacode.toString()] = Object.assign({}, koboldValleyArea);
 
             return Promise.all([
@@ -81,7 +81,7 @@ describe('Basic area exporting', function() {
         var areaTestObj = null;
 
         beforeEach(function() {
-            areaTestObj = { areas: {}, rooms: {} }
+            areaTestObj = rex.templateUtil.baseOutputTemplate();
             areaTestObj.areas[koboldValleyArea.areacode.toString()] = Object.assign({}, koboldValleyArea);
             areaTestObj.areas[goblinCaveArea.areacode.toString()] = Object.assign({}, goblinCaveArea);
 
